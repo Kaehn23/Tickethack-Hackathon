@@ -16,17 +16,30 @@ body {
 	background-color: #ffffff;
 }
 
+#rightSide {
+    
+    }
+
 #container {
+
     display : flex;
     justify-content: center;
     align-items: center;
-    
-}
+    height:100vh;
+ }
+
+.font {
+ text-align: center;
+    }
 
 #displayCart {
-    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
     background-color:white;
     width: 600px;
+
 
 }
 
@@ -46,8 +59,9 @@ body {
 #cartButton {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
-    align-items: center;
-    height: 6vh;
+    align-items:center;
+   
+    height: 300px;
     
 }
 
