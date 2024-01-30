@@ -1,16 +1,9 @@
-<<<<<<< HEAD
-var express = require("express");
-var path = require("path");
-var cookieParser = require("cookie-parser");
-var logger = require("morgan");
-=======
 require("dotenv").config() 
 require("./models/connection")
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
->>>>>>> d0c22b306c53be694d81acba9569adde89a61751
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
