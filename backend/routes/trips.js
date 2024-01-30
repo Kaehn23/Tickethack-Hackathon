@@ -2,11 +2,10 @@ var express = require("express");
 var router = express.Router();
 const Trip = require("../models/trips");
 /* GET home page. */
-router.get("/", function (req, res, next) {
+router.get("/", function (req, res) {
   Trip.find({ departure: req.body.departure }).then((trip) =>
-    console.log(trip)
+    res.json({ result: true, trip: trip })
   );
-  res.render("index", { title: "Express" });
 });
 
 module.exports = router;
