@@ -14,31 +14,31 @@ body {
   height: 6vh;
   padding: 5px 30px 5px 30px;
 
-  background-color: #ffffff;
-}
-#logo {
-  color: rgb(49, 189, 72);
-}
-.links {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-a {
-  text-decoration: none;
-  margin-right: 20px;
-}
+#rightSide {
+    
+    }
+
 #container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+ }
+
+.font {
+ text-align: center;
+    }
 
 #displayCart {
-  height: 300px;
-  background-color: white;
-  width: 1000px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    background-color:white;
+    width: 600px;
+
+
 }
 
 #total {
@@ -54,10 +54,12 @@ a {
 }
 
 #cartButton {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  display: flex;
-  align-items: center;
-  height: 6vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: flex;
+    align-items:center;
+   
+    height: 300px;
+    
 }
 
 button {
