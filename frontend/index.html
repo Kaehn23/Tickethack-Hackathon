@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@200;400&display=swap"
+      rel="stylesheet"
+    />
+    <title>TicketHack</title>
+  </head>
+  <body>
+    <nav class="navbar">
+      <div id="logo">
+        <h1 class="logo">Tickethack</h1>
+      </div>
+      <div id="links">
+        <a class="cartLink" href="cart.html">Cart</a>
+        <a class="bookingsLink" href="bookings.html">Bookings</a>
+      </div>
+    </nav>
+    <div class="container">
+      <div class="title">
+        <h1>Explore the world effortlessly by train!</h1>
+        <h2 class="text-secondaire">
+          Compare, book and enjoy cheap prices for train tickets:your journey
+          starts on Tickethack
+        </h2>
+      </div>
+
+      <div class="container-display">
+        <div id="search-form">
+          <div id="input-text">
+            <input id="input-departure" type="text" placeholder="Departure" />
+            <input id="input-arrival" type="text" placeholder="Arrival" />
+          </div>
+
+          <input id="input-date" type="date" placeholder="23/06/2024" />
+          <button class="search-btn">Search</button>
+        </div>
+        <div id="display">
+          <!-- <div class="display-trips">
+            <div class="cities">Paris>Lyon</div>
+            <div class="time">17:48</div>
+            <div class="price">62€</div>
+            <button class="book-btn">Book</button>
+          </div> -->
+
+          <img
+            class="train-img"
+            src="../images/train.png"
+            alt="train-logo"
+            srcset=""
+          />
+          <p>It's time to book your future trip.</p>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
