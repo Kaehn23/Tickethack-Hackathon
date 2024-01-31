@@ -7,6 +7,6 @@ const bookedSchema = new Schema({
   price: Number,
 });
 
-const booked = mongoose.model("booked", bookedSchema);
+const Book = mongoose.model("books", bookedSchema);
 
-module.exports = booked;
+module.exports = Book;

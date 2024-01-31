@@ -25,4 +25,10 @@ router.get("/", (req, res) => {
   });
 });
 
+router.delete("/", (req, res) => {
+  Cart.deleteMany().then((data) => {
+    res.json({ result: true });
+  });
+});
+
 module.exports = router;
