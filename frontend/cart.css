@@ -15,28 +15,24 @@ body {
   padding: 5px 30px 5px 30px;
 }
 
-
 #container {
-
-    display : flex;
-    justify-content: center;
-    align-items: center;
-    height:100vh;
- }
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
 .font {
- text-align: center;
-    }
+  text-align: center;
+}
 
 #displayCart {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100px;
-    background-color:white;
-    width: 600px;
-
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  background-color: white;
+  width: 600px;
 }
 
 #total {
@@ -52,12 +48,11 @@ body {
 }
 
 #cartButton {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    display: flex;
-    align-items:center;
-   
-    height: 300px;
-    
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  align-items: center;
+
+  height: 300px;
 }
 
 button {

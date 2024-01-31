@@ -6,7 +6,7 @@ body {
   font-family: "Arial", sans-serif;
 }
 .container {
-  background-image: url("../images/background.jpg");
+  background-image: url("./images/background.jpg");
   background-position: center center;
   background-size: cover;
   height: 96vh;
@@ -59,7 +59,7 @@ input[type="date"] {
   height: 300px;
   width: 300px;
   border-radius: 8px;
-  padding: 1rem;
+  padding: 1rem 2rem;
   display: flex;
   /* justify-content: center; */
   align-items: center;
@@ -95,22 +95,6 @@ input[type="date"] {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.navbar {
-  background-color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-a {
-  text-decoration: none;
-  color: black;
-  margin-right: 3rem;
-}
-#logo {
-  margin-left: 3rem;
-  color: #4ea991;
 }
 
 h2 {

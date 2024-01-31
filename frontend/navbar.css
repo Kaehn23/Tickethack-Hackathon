@@ -1,0 +1,15 @@
+.navbar {
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+a {
+  text-decoration: none;
+  color: black;
+  margin-right: 3rem;
+}
+.logo {
+  margin-left: 3rem;
+  color: #4ea991;
+}
