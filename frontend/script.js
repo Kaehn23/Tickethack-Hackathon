@@ -2,7 +2,7 @@ document.querySelector(".search-btn").addEventListener("click", function () {
   const departure = document.querySelector("#input-departure").value;
   const arrival = document.querySelector("#input-arrival").value;
   const date = document.querySelector("#input-date").value;
-  const url = `http://localhost:3000/trips/${departure}/${arrival}/${date}`;
+  const url = `https://tickethackback.vercel.app/trips/${departure}/${arrival}/${date}`;
   // console.log(url);
   fetch(url)
     .then((response) => response.json()) // Converts the response to JSON
@@ -44,7 +44,7 @@ document.querySelector("#display").addEventListener("click", function (event) {
     const buttonId = event.target.id;
     console.log(buttonId);
 
-    fetch("http://localhost:3000/cart", {
+    fetch("https://tickethackback.vercel.app/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({

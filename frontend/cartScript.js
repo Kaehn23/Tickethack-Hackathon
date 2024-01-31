@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/cart")
+fetch("https://tickethackback.vercel.app/cart")
   .then((response) => response.json())
   .then((data) => {
     if (data.trips.length > 0) {
@@ -42,7 +42,7 @@ fetch("http://localhost:3000/cart")
           const tripPrice = parseFloat(this.getAttribute("data-price"));
           // console.log(tripId);
 
-          fetch(`http://localhost:3000/cart/${tripId}`, {
+          fetch(`https://tickethackback.vercel.app/cart/${tripId}`, {
             method: "DELETE",
           })
             .then((response) => response.json())
@@ -67,12 +67,12 @@ document
   .addEventListener("click", function (event) {
     if (event.target && event.target.matches("#purchase-btn")) {
       console.log("you clicked");
-      fetch("http://localhost:3000/cart")
+      fetch("https://tickethackback.vercel.app/cart")
         .then((response) => response.json())
         .then((data) => {
           console.log("all trips:", data.trips);
           data.trips.map((trip) => {
-            fetch("http://localhost:3000/booked", {
+            fetch("https://tickethackback.vercel.app/booked", {
               method: "POST",
               headers: { "Content-Type": "application/json" },
               body: JSON.stringify({
@@ -83,7 +83,7 @@ document
               .then((data) => {
                 if (data) {
                   console.log(data);
-                  fetch(`http://localhost:3000/cart/`, {
+                  fetch(`https://tickethackback.vercel.app/cart/`, {
                     method: "DELETE",
                   })
                     .then((response) => response.json())

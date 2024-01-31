@@ -1,4 +1,4 @@
-fetch("http://localhost:3000/booked")
+fetch("https://tickethackback.vercel.app/booked")
   .then((response) => response.json())
   .then((data) => {
     if (data.trips.length > 0) {
