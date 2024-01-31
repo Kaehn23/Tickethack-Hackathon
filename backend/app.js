@@ -8,7 +8,7 @@ require("./models/connection");
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
 var tripsRouter = require("./routes/trips");
-// var bookedRouter = require('./routes/booked');
+var bookedRouter = require("./routes/booked");
 var cartRouter = require("./routes/cart");
 
 var app = express();
@@ -25,6 +25,6 @@ app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/trips", tripsRouter);
 app.use("/cart", cartRouter);
-// app.use("/booked", bookedRouter);
+app.use("/booked", bookedRouter);
 
 module.exports = app;

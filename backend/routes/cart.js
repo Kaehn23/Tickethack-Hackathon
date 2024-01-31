@@ -4,9 +4,7 @@ const Cart = require("../models/cart");
 const Trip = require("../models/trips");
 
 router.post("/", (req, res) => {
-  const id = req.body.id;
-  console.log(id);
-  Trip.findById(id).then((trip) => {
+  Trip.findById(req.body.id.trim()).then((trip) => {
     if (trip) {
       console.log(trip);
       const newCart = new Cart({
@@ -19,6 +17,11 @@ router.post("/", (req, res) => {
     } else {
       res.json({ result: false });
     }
+  });
+});
+router.get("/", (req, res) => {
+  Cart.find().then((trips) => {
+    res.json({ trips });
   });
 });
 
