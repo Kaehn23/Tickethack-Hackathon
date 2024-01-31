@@ -18,8 +18,8 @@ document.querySelector(".search-btn").addEventListener("click", function () {
           <div class="display-trips">
           <div class="cities"><span class="departure">${trip.departure}</span>><span class="arrival">${trip.arrival}</span></div>
           <div class="time">${hours}</div>
-          <div class="price">${trip.price}€</div>
-          <button class="book-btn">Book</button>
+          <div ><span class="price">${trip.price}</span>€</div>
+          <button id="${trip._id}" class="book-btn">Book</button>
         </div> 
             `;
         });
@@ -42,21 +42,15 @@ document.querySelector(".search-btn").addEventListener("click", function () {
 });
 document.querySelector("#display").addEventListener("click", function (event) {
   if (event.target && event.target.matches(".book-btn")) {
-    const parentElement = event.target.closest(".display-trips");
-    const departure = parentElement.querySelector(".departure").textContent;
-    const arrival = parentElement.querySelector(".arrival").textContent;
-    const date = parentElement.querySelector(".time").textContent;
-    const price = parentElement.querySelector(".price").textContent;
+    const buttonId = event.target.id;
 
-    console.log(departure);
+    console.log(buttonId);
+
     fetch("http://localhost:3000/cart", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        departure: departure,
-        arrival: arrival,
-        date: date,
-        price: price,
+        id: buttonId,
       }),
     })
       .then((response) => response.json())
