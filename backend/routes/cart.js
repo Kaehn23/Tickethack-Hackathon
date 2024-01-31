@@ -32,8 +32,11 @@ router.delete("/", (req, res) => {
 });
 
 router.delete("/:id", (req, res) => {
-  cons;
-  Cart.deleteOne({ _id: tripId });
+  console.log(req.params.id);
+
+  Cart.deleteOne({ _id: req.params.id }).then((data) => {
+    res.json({ result: true });
+  });
 });
 
 module.exports = router;

@@ -17,8 +17,8 @@ fetch("http://localhost:3000/cart")
         <div class="display-trips">
         <div class="cities">${trip.departure}>${trip.arrival}</div>
         <div class="time">${hours}</div>
-        <div class="price">${trip.price}€</div>
-        <button class="cart-btn">X</button>
+        <div data-price=${trip.price} class="price">${trip.price}€</div>
+        <button data-id=${trip._id} class="cart-btn">X</button>
       </div>
          `;
         total += trip.price;
@@ -28,27 +28,35 @@ fetch("http://localhost:3000/cart")
       ).innerHTML += `   <div class="total-container">
       <div class="total">
         <p class="cart-text">Total:${total} €</p>
-        <button  id='purchase-btn'  class="cart-btn">Purchase</button>
+        <button  id='purchase-btn'  class="cart-btn-purchase">Purchase</button>
       </div>
     </div>`;
 
-      /*
+      //---------------------------------
+
       const cartButtons = document.querySelectorAll(".cart-btn");
 
       cartButtons.forEach((button) => {
         button.addEventListener("click", function () {
-          // Get the id of the trip from the button's data-id attribute
           const tripId = this.getAttribute("data-id");
+          const tripPrice = parseFloat(this.getAttribute("data-price"));
+          // console.log(tripId);
 
-          // Send a DELETE request to the server
-          fetch(`http://localhost:3000/booked/${tripId}`, {
+          fetch(`http://localhost:3000/cart/${tripId}`, {
             method: "DELETE",
           })
             .then((response) => response.json())
-            .then((data) => console.log(data))
+            .then((data) => {
+              this.parentElement.remove();
+              total -= tripPrice;
+              // document.querySelector(".price").textContent = `Total: ${total}€`;
+              location.reload();
+            })
             .catch((error) => console.error("Error:", error));
         });
-      });*/
+      });
+
+      //-------------------------------------
     } else {
       console.log("no trips found");
     }
@@ -87,21 +95,5 @@ document
               });
           });
         });
-
-      // fetch("http://localhost:3000/cart", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({
-      //     id: buttonId,
-      //   }),
-      // })
-      //   .then((response) => response.json())
-      //   .then((data) => {
-      //     if (data) {
-      //       console.log(data);
-      //     } else {
-      //       console.log("Moins youpi...");
-      //     }
-      //   });
     }
   });

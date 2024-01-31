@@ -73,6 +73,16 @@ body {
   cursor: pointer;
   color: #fff;
 }
+.cart-btn-purchase {
+  background-color: #4ea991;
+
+  padding: 5px 10px;
+  border: none;
+
+  border-radius: 4px;
+  cursor: pointer;
+  color: #fff;
+}
 
 #total {
   background-color: rgba(65, 98, 245, 0.918);

@@ -10,13 +10,17 @@ fetch("http://localhost:3000/booked")
       </div>
      `;
       data.trips.forEach((trip) => {
+        let currentMoment = moment();
+        let departureMoment = moment(trip.date);
+        let remaningHours = departureMoment.diff(currentMoment, "hours");
+
         const hours = moment(trip.date).format("HH:mm");
         document.querySelector(".container-trips").innerHTML += `
         <div class="display-trips">
         <div class="cities">${trip.departure}>${trip.arrival}</div>
         <div class="time">${hours}</div>
         <div class="price">${trip.price}€</div>
-        <p>Departure in 5 hours</p>
+        <p>Departure in ${remaningHours} hours</p>
       </div>
          `;
       });
