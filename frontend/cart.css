@@ -22,8 +22,9 @@ body {
   height: 100vh;
 }
 
-.font {
+.empty-text {
   text-align: center;
+  margin-top: 4rem;
 }
 
 #displayCart {

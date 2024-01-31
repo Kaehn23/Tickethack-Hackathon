@@ -31,4 +31,9 @@ router.delete("/", (req, res) => {
   });
 });
 
+router.delete("/:id", (req, res) => {
+  cons;
+  Cart.deleteOne({ _id: tripId });
+});
+
 module.exports = router;
