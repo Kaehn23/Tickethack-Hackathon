@@ -1,23 +1,27 @@
 var express = require("express");
 var router = express.Router();
 const Cart = require("../models/cart");
+const Trip = require("../models/trips");
 
-
-router.post('/post', (req, res) => {
-    const { departure, arrival, date, price } = req.body;
-    const newCart = new Cart ({
-        departure: departure,
-        arrival: arrival, 
-        date: date, 
-        price: price,
-    })
-
-    newCart.save().then(() => res.json ({ result: true, newCart }))
-})
-
-router.get('/', (req, res) => {
-    res.json({ result: true })
-})
-	
-
+router.post("/", (req, res) => {
+const { id } = req.body; //
+console.log(id);
+Trip.findById(id).then((trip) => {
+if (trip) {
+console.log(trip);
+const newCart = new Cart({
+departure: trip.departure,
+arrival: trip.arrival,
+date: trip.date,
+price: trip.price,
+});
+newCart.save().then(() => res.json({ result: true, newCart }));
+} else {
+res.json({ result: false });
+}
+});
+});
+router.get("/", (req, res) => {
+res.json({ result: true });
+});
 module.exports = router;
